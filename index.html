@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LGBTQ+ スタッフ研修資料 | KBC</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a2744;
+    --ink-light: #2d3f6b;
+    --ink-faint: #e8eaf2;
+    --white: #ffffff;
+    --off-white: #f8f9fc;
+    --accent-red: #e05a5a;
+    --accent-orange: #e8834a;
+    --accent-yellow: #d4a843;
+    --accent-green: #4a9e7a;
+    --accent-blue: #4a7ac8;
+    --accent-purple: #7a5ab8;
+    --accent-teal: #3a8fa0;
+    --gray-mid: #8892aa;
+    --gray-light: #c8cedd;
+    --gray-line: #e2e6f0;
+    --shadow: 0 2px 20px rgba(26,39,68,0.08);
+    --shadow-md: 0 4px 32px rgba(26,39,68,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--off-white);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  /* ── PROGRESS BAR ── */
+  #progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-red), var(--accent-orange), var(--accent-yellow), var(--accent-green), var(--accent-blue), var(--accent-purple));
+    width: 0%;
+    z-index: 1000;
+    transition: width 0.1s;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    color: var(--white);
+    padding: 80px 24px 72px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #e05a5a, #e8834a, #d4a843, #4a9e7a, #4a7ac8, #7a5ab8);
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--gray-light);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding: 6px 16px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(26px, 5vw, 40px);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    letter-spacing: 0.03em;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(90deg, #e8834a, #d4a843, #4a9e7a, #4a7ac8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    color: var(--gray-light);
+    max-width: 560px;
+    margin: 0 auto 36px;
+    line-height: 1.9;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-stat .num {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--white);
+    display: block;
+    line-height: 1;
+  }
+
+  .hero-stat .num span {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .hero-stat .label {
+    font-size: 11px;
+    color: var(--gray-light);
+    margin-top: 6px;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ── SECTION ── */
+  section {
+    padding: 64px 0;
+  }
+
+  section + section {
+    border-top: 1px solid var(--gray-line);
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    margin-bottom: 12px;
+  }
+
+  .section-label .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    display: inline-block;
+  }
+
+  h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+
+  p { margin-bottom: 16px; color: #2d3f6b; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  /* ── WHY SECTION ── */
+  .why-box {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--accent-blue);
+    margin-bottom: 24px;
+  }
+
+  /* ── 4軸モデル ── */
+  .axis-container {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow-md);
+    margin-top: 28px;
+  }
+
+  .axis-intro {
+    text-align: center;
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--gray-line);
+  }
+
+  .axis-intro p {
+    font-size: 13px;
+    color: var(--gray-mid);
+    margin-bottom: 0;
+  }
+
+  .axis-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 560px) {
+    .axis-grid { grid-template-columns: 1fr; }
+  }
+
+  .axis-item {
+    border-radius: 12px;
+    padding: 22px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .axis-item.axis-1 { background: #fef3f3; border: 1px solid #f5cece; }
+  .axis-item.axis-2 { background: #fdf6ee; border: 1px solid #f0d9c0; }
+  .axis-item.axis-3 { background: #eef7f3; border: 1px solid #c0e0d4; }
+  .axis-item.axis-4 { background: #eef2fd; border: 1px solid #c0ceee; }
+
+  .axis-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .axis-1 .axis-num { color: var(--accent-red); }
+  .axis-2 .axis-num { color: var(--accent-orange); }
+  .axis-3 .axis-num { color: var(--accent-green); }
+  .axis-4 .axis-num { color: var(--accent-blue); }
+
+  .axis-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .axis-desc {
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .axis-example {
+    margin-top: 10px;
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.7);
+    color: var(--gray-mid);
+  }
+
+  .axis-independence-note {
+    margin-top: 24px;
+    padding: 18px 20px;
+    background: var(--ink-faint);
+    border-radius: 10px;
+    font-size: 13px;
+    color: var(--ink-light);
+    border-left: 3px solid var(--accent-blue);
+  }
+
+  /* ── LGBTQ 各概念 ── */
+  .letter-section {
+    margin-bottom: 16px;
+  }
+
+  .letter-card {
+    background: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .letter-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 28px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+  }
+
+  .letter-header:hover { background: var(--ink-faint); }
+
+  .letter-badge {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 900;
+    font-family: 'Noto Serif JP', serif;
+    flex-shrink: 0;
+    color: white;
+  }
+
+  .badge-L { background: var(--accent-red); }
+  .badge-G { background: var(--accent-orange); }
+  .badge-B { background: var(--accent-yellow); color: var(--ink); }
+  .badge-T { background: var(--accent-green); }
+  .badge-Q { background: var(--accent-blue); }
+  .badge-plus { background: var(--accent-purple); }
+
+  .letter-summary { flex: 1; }
+  .letter-name { font-weight: 700; font-size: 15px; margin-bottom: 2px; }
+  .letter-short { font-size: 13px; color: var(--gray-mid); }
+
+  .letter-toggle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--ink-faint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+
+  .letter-card.open .letter-toggle { transform: rotate(180deg); }
+
+  .letter-body {
+    display: none;
+    padding: 0 28px 28px;
+  }
+
+  .letter-card.open .letter-body { display: block; }
+
+  .letter-axis-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 14px;
+  }
+
+  .tag-identity { background: #fef3f3; color: var(--accent-red); }
+  .tag-orientation { background: #eef7f3; color: var(--accent-green); }
+  .tag-both { background: #fdf6ee; color: var(--accent-orange); }
+  .tag-expression { background: #f3eefb; color: var(--accent-purple); }
+  .tag-open { background: #eef2fd; color: var(--accent-blue); }
+
+  .letter-detail {
+    font-size: 14px;
+    color: var(--ink-light);
+    line-height: 1.85;
+    margin-bottom: 16px;
+  }
+
+  .misconception-box {
+    background: #fff8f0;
+    border: 1px solid #f0d9c0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-top: 14px;
+  }
+
+  .misconception-box .mis-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent-orange);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .misconception-box p {
+    font-size: 13px;
+    color: var(--ink-light);
+    margin-bottom: 0;
+  }
+
+  /* ── 言葉の地雷原 ── */
+  .minefield-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  @media (max-width: 520px) {
+    .minefield-grid { grid-template-columns: 1fr; }
+  }
+
+  .minefield-item {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+  }
+
+  .minefield-item .avoid {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .avoid-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fef3f3;
+    border: 1.5px solid #e8aaaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .ok-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #eef7f3;
+    border: 1.5px solid #a0d4bc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .word-avoid { font-size: 13px; font-weight: 700; color: var(--accent-red); }
+  .word-ok { font-size: 13px; font-weight: 700; color: var(--accent-green); }
+  .word-reason { font-size: 12px; color: var(--gray-mid); margin-top: 6px; line-height: 1.6; }
+
+  .arrow-between {
+    text-align: center;
+    color: var(--gray-mid);
+    font-size: 16px;
+    margin: 4px 0;
+  }
+
+  /* ── 関わり方 ── */
+  .practice-section {
+    margin-top: 28px;
+  }
+
+  .practice-scenario {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 26px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+    border-left: 4px solid var(--gray-line);
+    transition: border-color 0.2s;
+  }
+
+  .practice-scenario:hover { border-left-color: var(--accent-blue); }
+
+  .scenario-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .dialogue {
+    margin-top: 14px;
+  }
+
+  .dialogue-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+
+  .speaker {
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 52px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .speaker-staff { background: var(--ink-faint); color: var(--ink); }
+  .speaker-client { background: #eef7f3; color: var(--accent-green); }
+
+  .dialogue-text {
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.75;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: var(--off-white);
+    flex: 1;
+  }
+
+  .dialogue-text.ng { background: #fef3f3; }
+  .dialogue-text.ok { background: #eef7f3; }
+
+  .ng-label, .ok-label {
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .ng-label { color: var(--accent-red); }
+  .ok-label { color: var(--accent-green); }
+
+  .practice-note {
+    margin-top: 14px;
+    padding: 14px 16px;
+    background: var(--ink-faint);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--ink-light);
+  }
+
+  /* ── アウティング ── */
+  .outing-box {
+    background: var(--ink);
+    color: var(--white);
+    border-radius: 16px;
+    padding: 32px;
+    margin-top: 28px;
+  }
+
+  .outing-box h3 { color: var(--white); margin-bottom: 8px; font-size: 18px; }
+  .outing-box p { color: var(--gray-light); }
+
+  .outing-rules {
+    margin-top: 20px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .outing-rule {
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    border-left: 3px solid rgba(255,255,255,0.25);
+  }
+
+  .outing-rule strong {
+    color: var(--white);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ── 今日からできること ── */
+  .action-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .action-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+
+  .action-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .action-card h3 { font-size: 14px; margin-bottom: 8px; }
+  .action-card p { font-size: 13px; color: var(--gray-mid); margin-bottom: 0; }
+
+  /* ── 参考資料 ── */
+  .sources-grid {
+    display: grid;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .source-link {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 18px 22px;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .source-link:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .source-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--ink-faint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .source-text .source-title { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+  .source-text .source-desc { font-size: 12px; color: var(--gray-mid); }
+
+  .source-arrow {
+    margin-left: auto;
+    color: var(--gray-mid);
+    flex-shrink: 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: var(--gray-light);
+    text-align: center;
+    padding: 32px 20px;
+    font-size: 12px;
+    margin-top: 48px;
+  }
+
+  footer a { color: var(--gray-mid); }
+
+  /* ── DIVIDER ── */
+  .rainbow-divider {
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-red), var(--accent-orange), var(--accent-yellow), var(--accent-green), var(--accent-blue), var(--accent-purple));
+    border-radius: 2px;
+    margin: 32px 0;
+  }
+
+  /* ── HIGHLIGHT ── */
+  .highlight {
+    background: linear-gradient(transparent 60%, rgba(74,122,200,0.15) 60%);
+    padding: 0 2px;
+  }
+
+  /* ── NOTE ── */
+  .note {
+    font-size: 13px;
+    color: var(--gray-mid);
+    padding: 14px 18px;
+    background: var(--ink-faint);
+    border-radius: 8px;
+    margin-top: 16px;
+    line-height: 1.7;
+  }
+
+  /* ── SCROLL ANIMATION ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── SPECTRUM VIZ ── */
+  .spectrum-viz {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    margin-top: 24px;
+  }
+
+  .spectrum-bar {
+    height: 20px;
+    border-radius: 100px;
+    margin: 10px 0 6px;
+    position: relative;
+  }
+
+  .spectrum-label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--gray-mid);
+    margin-bottom: 20px;
+  }
+
+  .spectrum-bar-identity {
+    background: linear-gradient(90deg, #e05a5a, #e8834a, #d4a843, #4a7ac8);
+  }
+
+  .spectrum-bar-orientation {
+    background: linear-gradient(90deg, #4a9e7a, #4a7ac8, #7a5ab8);
+  }
+
+  .spectrum-bar-expression {
+    background: linear-gradient(90deg, #c0ceee, #7a5ab8);
+  }
+
+  .spectrum-title-small {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink-light);
+    margin-bottom: 4px;
+  }
+
+  /* 数字強調 */
+  .big-stat {
+    text-align: center;
+    padding: 24px;
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+  }
+
+  .big-stat .big-num {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .big-stat .big-num sup {
+    font-size: 22px;
+  }
+
+  .big-stat .big-label {
+    font-size: 13px;
+    color: var(--gray-mid);
+    margin-top: 8px;
+  }
+
+  .big-stat .big-source {
+    font-size: 11px;
+    color: var(--gray-mid);
+    margin-top: 8px;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  @media (max-width: 520px) {
+    .stat-grid { grid-template-columns: 1fr; }
+    .minefield-grid { grid-template-columns: 1fr; }
+  }
+
+  /* インタラクティブ：スペクトラムスライダー */
+  .slider-demo {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    margin-top: 24px;
+  }
+
+  .slider-demo h3 { margin-bottom: 16px; font-size: 15px; }
+
+  .slider-row {
+    margin-bottom: 20px;
+  }
+
+  .slider-row label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .slider-row .ends {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--gray-mid);
+    margin-top: 4px;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--gray-line);
+    outline: none;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--ink);
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.2);
+  }
+
+  .slider-message {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: var(--ink-faint);
+    border-radius: 10px;
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.7;
+    min-height: 60px;
+    transition: all 0.3s;
+  }
+
+  /* partner words section */
+  .partner-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    background: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .partner-table th {
+    background: var(--ink);
+    color: var(--white);
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .partner-table td {
+    padding: 14px 18px;
+    font-size: 13px;
+    color: var(--ink-light);
+    border-bottom: 1px solid var(--gray-line);
+    vertical-align: top;
+  }
+
+  .partner-table tr:last-child td { border-bottom: none; }
+  .partner-table tr:hover td { background: var(--ink-faint); }
+
+  .word-chip {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+
+  .chip-avoid { background: #fef3f3; color: var(--accent-red); border: 1px solid #f5cece; }
+  .chip-ok { background: #eef7f3; color: var(--accent-green); border: 1px solid #c0e0d4; }
+  .chip-neutral { background: var(--ink-faint); color: var(--ink-light); }
+
+  /* Q section special */
+  .q-highlight {
+    background: linear-gradient(135deg, #eef2fd 0%, #f3eefb 100%);
+    border: 1px solid #c0ceee;
+    border-radius: 14px;
+    padding: 24px;
+    margin-top: 16px;
+  }
+
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-label">KBC スタッフ研修資料</div>
+    <h1>LGBTQ+ を<br><span>正確に、丁寧に</span>知る</h1>
+    <p class="hero-sub">「知らない」ことが無意識の傷になる。<br>基礎知識と現場での関わり方を、一緒に整理します。</p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="num"><b>9.7</b><span>%</span></span>
+        <div class="label">国内LGBTQ+層の推計割合（電通2023）</div>
+      </div>
+      <div class="hero-stat">
+        <span class="num"><b>65.1</b><span>%</span></span>
+        <div class="label">誰にもカミングアウトしていない割合（電通2018）</div>
+      </div>
+      <div class="hero-stat">
+        <span class="num"><b>4</b><span>本の軸</span></span>
+        <div class="label">「性」を理解するための視点</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 1: なぜ知る必要があるか -->
+<section>
+  <div class="container">
+    <div class="section-label"><span class="dot"></span> Section 01</div>
+    <h2>なぜスタッフがこれを知る必要があるのか</h2>
+
+    <div class="why-box fade-in">
+      <h3>就労移行支援の利用者の中にも、必ずいます</h3>
+      <p>電通グループが2023年に実施した「電通LGBTQ+調査2023」では、LGBTQ+層は調査対象の<strong>9.7%</strong>に上ると報告されています。なお、学術的な無作為抽出調査（国立社会保障・人口問題研究所、2023年）では3.5〜8.8%と幅があり、調査手法によって数値は異なります。いずれにせよ「珍しいこと」ではなく、「普通にいる」という前提でいることが出発点になります。</p>
+      <p>さらに、精神障害・発達障害とセクシュアルマイノリティの重複（いわゆる「二重のマイノリティ」）を持つ利用者の存在も研究で示されており、支援の文脈ではこの交差点への意識が重要です。</p>
+    </div>
+
+    <div class="why-box fade-in" style="border-left-color: var(--accent-red);">
+      <h3>「知らない」は中立ではない</h3>
+      <p>「うちの事業所には関係ない」という想定そのものが、利用者にとって「ここでは言えない」という環境をつくります。開示しなかった場合に、スタッフが無意識に「彼女は？」「結婚は？」と聞くことが、小さな、しかし確実な傷になります。</p>
+      <p>正確な知識は、「特別扱い」ではなく「配慮の土台」です。</p>
+    </div>
+
+    <div class="note fade-in">
+      ⁱ 本資料のデータ出典：「電通LGBTQ+調査2023」（dentsu Japan）、国立社会保障・人口問題研究所「全国SOGI調査」（2023年）、厚生労働省委託「職場におけるダイバーシティ推進事業報告書」、及びWHO/ICD-11等の国際分類を参照しています。なお、LGBTQ+の人口割合は調査手法（無作為抽出 vs インターネットモニタ）により3.5〜9.7%と幅があります。
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: 4本の軸 -->
+<section>
+  <div class="container">
+    <div class="section-label"><span class="dot" style="background:var(--accent-orange)"></span> Section 02</div>
+    <h2>「性」は1本ではなく、4本の軸で考える</h2>
+
+    <p>「性」を「男か女か」の1本の線で考えると、LGBTQを理解しようとしても必ず混乱します。実際には、「性」は<strong class="highlight">独立した4つの軸</strong>で構成されており、それぞれが異なる概念です。</p>
+
+    <div class="axis-container fade-in">
+      <div class="axis-intro">
+        <p>この4つは<strong>互いに独立</strong>しています。ひとつの軸がわかっても、他の軸はわかりません。</p>
+      </div>
+
+      <div class="axis-grid">
+        <div class="axis-item axis-1">
+          <div class="axis-num">AXIS 01 &nbsp;·&nbsp; 身体的性</div>
+          <div class="axis-title">身体の構造</div>
+          <p class="axis-desc">生まれた時の生物学的な性。生殖器・染色体・ホルモンなどで分類されるが、インターセックスのように二元的に分けられない状態もある。</p>
+          <div class="axis-example">例：染色体がXXだが外性器が典型的な「男性型」 → 身体の多様性はグラデーション状</div>
+        </div>
+
+        <div class="axis-item axis-2">
+          <div class="axis-num">AXIS 02 &nbsp;·&nbsp; 性自認</div>
+          <div class="axis-title">自分が感じる性</div>
+          <p class="axis-desc">自分が「男性」「女性」「どちらでもない」など、内側からどう感じるか。<strong>身体的性と一致するとは限らない</strong>。脳の認識・心理的性別とも言われる。</p>
+          <div class="axis-example">例：身体は男性だが、自分を女性と感じる（トランス女性）</div>
+        </div>
+
+        <div class="axis-item axis-3">
+          <div class="axis-num">AXIS 03 &nbsp;·&nbsp; 性的指向</div>
+          <div class="axis-title">誰に恋愛・性的に惹かれるか</div>
+          <p class="axis-desc">恋愛感情や性的関心が向く対象の性別。<strong>性自認とは別の軸</strong>。LとGとBは主にここに関係する。</p>
+          <div class="axis-example">例：女性が女性に惹かれる（レズビアン）／どの性別にも惹かれる（バイセクシュアル）</div>
+        </div>
+
+        <div class="axis-item axis-4">
+          <div class="axis-num">AXIS 04 &nbsp;·&nbsp; 性表現</div>
+          <div class="axis-title">外に表す性</div>
+          <p class="axis-desc">服装・髪型・言動・趣味など、外側に表現する性のあり方。「らしさ」に関わる部分で、<strong>他の3軸とは独立</strong>している。</p>
+          <div class="axis-example">例：性自認は女性だが、外見は「中性的」な表現を好む</div>
+        </div>
+      </div>
+
+      <div class="axis-independence-note">
+        <strong>重要：</strong> 「身体が男性→性自認も男性→異性愛者→男性らしい服装」という連鎖は、社会的な「デフォルト設定」に過ぎません。4本の軸はそれぞれ独立しており、あらゆる組み合わせが存在します。
+      </div>
+    </div>
+
+    <!-- スペクトラム可視化 -->
+    <div class="spectrum-viz fade-in" style="margin-top:24px">
+      <h3 style="margin-bottom:18px; font-size:15px;">各軸はスペクトラム（連続した帯）として存在する</h3>
+
+      <div class="spectrum-title-small">性自認（男性 ←→ 女性 ＋ どちらでもない・両方）</div>
+      <div class="spectrum-bar spectrum-bar-identity"></div>
+      <div class="spectrum-label-row"><span>男性</span><span>ノンバイナリー等</span><span>女性</span></div>
+
+      <div class="spectrum-title-small">性的指向（同性 ←→ 両方 ←→ 異性 ＋ 無性愛）</div>
+      <div class="spectrum-bar spectrum-bar-orientation"></div>
+      <div class="spectrum-label-row"><span>同性のみ</span><span>どちらも</span><span>異性のみ</span></div>
+
+      <div class="spectrum-title-small">性表現（フェミニン ←→ 中性的 ←→ マスキュリン）</div>
+      <div class="spectrum-bar spectrum-bar-expression"></div>
+      <div class="spectrum-label-row"><span>フェミニン</span><span>中性的</span><span>マスキュリン</span></div>
+
+      <p style="font-size:12px; color:var(--gray-mid); margin-top:10px;">
+        ※ これらのスペクトラムはあくまで概念的な可視化です。実際の多様性はさらに複雑で、言語化できないあり方も含みます。
+      </p>
+    </div>
+
+    <!-- インタラクティブデモ -->
+    <div class="slider-demo fade-in">
+      <h3>体験デモ：4軸の組み合わせを動かしてみる</h3>
+      <p style="font-size:13px; color:var(--gray-mid); margin-bottom:20px;">各スライダーを動かすと、その組み合わせがどんな状態に相当するか確認できます。</p>
+
+      <div class="slider-row">
+        <label><span>性自認</span><span id="label-identity">中間</span></label>
+        <input type="range" id="slider-identity" min="0" max="4" value="2">
+        <div class="ends"><span>女性</span><span>男性</span></div>
+      </div>
+
+      <div class="slider-row">
+        <label><span>性的指向</span><span id="label-orientation">どちらも</span></label>
+        <input type="range" id="slider-orientation" min="0" max="4" value="2">
+        <div class="ends"><span>同性のみ</span><span>異性のみ</span></div>
+      </div>
+
+      <div class="slider-row">
+        <label><span>性表現</span><span id="label-expression">中性的</span></label>
+        <input type="range" id="slider-expression" min="0" max="4" value="2">
+        <div class="ends"><span>フェミニン</span><span>マスキュリン</span></div>
+      </div>
+
+      <div class="slider-message" id="slider-message">
+        スライダーを動かすと、この4軸の組み合わせについての説明が表示されます。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: LGBTQ 各概念 -->
+<section>
+  <div class="container">
+    <div class="section-label"><span class="dot" style="background:var(--accent-green)"></span> Section 03</div>
+    <h2>LGBTQ+ の各概念を丁寧に理解する</h2>
+
+    <p>アルファベット1文字ずつが、異なる軸・異なる概念を指しています。まとめて「LGBTの人」と呼ぶのは便利ですが、内実は全く異なります。</p>
+
+    <!-- L -->
+    <div class="letter-section fade-in">
+      <div class="letter-card" id="card-L">
+        <div class="letter-header" onclick="toggleCard('card-L')">
+          <div class="letter-badge badge-L">L</div>
+          <div class="letter-summary">
+            <div class="letter-name">レズビアン（Lesbian）</div>
+            <div class="letter-short">女性として自認する人が、主に女性に恋愛・性的に惹かれる</div>
+          </div>
+          <div class="letter-toggle">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5l5 5 5-5" stroke="#1a2744" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="letter-body">
+          <span class="letter-axis-tag tag-orientation">軸：性的指向</span>
+          <p class="letter-detail">性自認が女性であり、恋愛的・性的な関心が主に女性に向く人を指します。「主に」とつくのは、性的指向もスペクトラムであり、完全に固定されているわけではないためです。</p>
+          <p class="letter-detail">身体的特徴や外見とは独立した概念です。外見が「女性らしい」かどうかと、性的指向は無関係です。</p>
+          <div class="misconception-box">
+            <div class="mis-label">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#e8834a" stroke-width="1.5"/><path d="M7 4v4M7 10v.5" stroke="#e8834a" stroke-width="1.5" stroke-linecap="round"/></svg>
+              よくある誤解
+            </div>
+            <p>「見た目でわかる」「男性的な服装をしている」という思い込みは誤りです。レズビアンの人の外見・性表現は多様です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- G -->
+    <div class="letter-section fade-in">
+      <div class="letter-card" id="card-G">
+        <div class="letter-header" onclick="toggleCard('card-G')">
+          <div class="letter-badge badge-G">G</div>
+          <div class="letter-summary">
+            <div class="letter-name">ゲイ（Gay）</div>
+            <div class="letter-short">男性として自認する人が、主に男性に恋愛・性的に惹かれる</div>
+          </div>
+          <div class="letter-toggle">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5l5 5 5-5" stroke="#1a2744" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="letter-body">
+          <span class="letter-axis-tag tag-orientation">軸：性的指向</span>
+          <p class="letter-detail">性自認が男性であり、恋愛的・性的な関心が主に男性に向く人を指します。なお「ゲイ」はより広い意味でLGBT全体を指す場合もありますが、厳密にはこの定義が適切です。</p>
+          <p class="letter-detail">職場での「結婚は？」「彼女は？」という一般的な会話が、本人にとって非常に答えにくい場面になります。</p>
+          <div class="misconception-box">
+            <div class="mis-label">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#e8834a" stroke-width="1.5"/><path d="M7 4v4M7 10v.5" stroke="#e8834a" stroke-width="1.5" stroke-linecap="round"/></svg>
+              よくある誤解
+            </div>
+            <p>「女性的な男性＝ゲイ」ではありません。性表現と性的指向は別の軸です。また「選択してなっている」わけでもなく、性的指向は意図的に変えられるものではありません（WHO・APA等の見解）。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- B -->
+    <div class="letter-section fade-in">
+      <div class="letter-card" id="card-B">
+        <div class="letter-header" onclick="toggleCard('card-B')">
+          <div class="letter-badge badge-B">B</div>
+          <div class="letter-summary">
+            <div class="letter-name">バイセクシュアル（Bisexual）</div>
+            <div class="letter-short">複数の性別に恋愛・性的に惹かれる</div>
+          </div>
+          <div class="letter-toggle">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5l5 5 5-5" stroke="#1a2744" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="letter-body">
+          <span class="letter-axis-tag tag-orientation">軸：性的指向</span>
+          <p class="letter-detail">自分と同じ性別の人にも、異なる性別の人にも恋愛的・性的に惹かれうる人を指します。「どちらも同程度」である必要はなく、割合や状況によってもグラデーションがあります。</p>
+          <p class="letter-detail">「パンセクシュアル（Pansexual）」は性別を問わず惹かれるという概念で近似しますが、ニュアンスの違いがあります。本人が使う言葉を尊重することが大切です。</p>
+          <div class="misconception-box">
+            <div class="mis-label">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#e8834a" stroke-width="1.5"/><path d="M7 4v4M7 10v.5" stroke="#e8834a" stroke-width="1.5" stroke-linecap="round"/></svg>
+              よくある誤解・「バイフォビア」
+            </div>
+            <p>「異性とつきあっているからバイではない」「どちらかを選べばいい」は誤りです。パートナーの性別がどうであれ、当人の性的指向は変わりません。LGBの中でも偏見（バイフォビア）を受けやすい当事者です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T -->
+    <div class="letter-section fade-in">
+      <div class="letter-card" id="card-T">
+        <div class="letter-header" onclick="toggleCard('card-T')">
+          <div class="letter-badge badge-T">T</div>
+          <div class="letter-summary">
+            <div class="letter-name">トランスジェンダー（Transgender）</div>
+            <div class="letter-short">身体的性と性自認が一致しない、またはその状態にある人</div>
+          </div>
+          <div class="letter-toggle">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5l5 5 5-5" stroke="#1a2744" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="letter-body">
+          <span class="letter-axis-tag tag-identity">軸：性自認</span>
+          <p class="letter-detail"><strong>重要：Tは「性的指向」ではなく「性自認」の概念です。</strong>出生時に割り当てられた性別と、自分が感じる性別（性自認）が異なる人を指します。</p>
+          <p class="letter-detail">トランスジェンダー女性（MtF）は「出生時は男性として登録されたが、性自認は女性」。トランスジェンダー男性（FtM）は逆。なお、MtF・FtMという表記は「出生時の性別が本来の性別より先に来る」という印象を与えるとして当事者から敬遠されることが増えており、現在は<strong>「トランスジェンダー女性」「トランスジェンダー男性」</strong>という表記が主流です。また「ノンバイナリー」「Xジェンダー」など、男女二元論に収まらない性自認もトランスジェンダーの傘の下に含まれることがあります。</p>
+          <p class="letter-detail">医療的措置（ホルモン療法・手術）を受けているかどうかは個人の選択であり、それによってトランスジェンダーかどうかが決まるわけではありません。また、性的指向はどちらの方向にもありえます（トランスジェンダー女性が男性を好きな場合もあれば、女性を好きな場合もある）。</p>
+          <div class="misconception-box">
+            <div class="mis-label">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#e8834a" stroke-width="1.5"/><path d="M7 4v4M7 10v.5" stroke="#e8834a" stroke-width="1.5" stroke-linecap="round"/></svg>
+              特に重要な誤解
+            </div>
+            <p>「トランスジェンダー＝ゲイ・レズビアン」は誤りです。性自認と性的指向は独立した概念です。また「病気」や「精神疾患」ではありません（ICD-11では「性別不合」として精神疾患の章から削除されました）。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q -->
+    <div class="letter-section fade-in">
+      <div class="letter-card" id="card-Q">
+        <div class="letter-header" onclick="toggleCard('card-Q')">
+          <div class="letter-badge badge-Q">Q</div>
+          <div class="letter-summary">
+            <div class="letter-name">クエスチョニング / クィア（Questioning / Queer）</div>
+            <div class="letter-short">「自分はどこに属するかわからない」状態、または既存カテゴリに収まらない総称</div>
+          </div>
+          <div class="letter-toggle">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5l5 5 5-5" stroke="#1a2744" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="letter-body">
+          <span class="letter-axis-tag tag-open">軸：開かれた概念</span>
+
+          <div class="q-highlight">
+            <h3 style="margin-bottom:12px; font-size:15px;">なぜ「Q」を入れるのか</h3>
+            <p class="letter-detail">Qには2つの意味があります。</p>
+            <p class="letter-detail"><strong>①クエスチョニング：</strong>自分の性自認や性的指向がまだ確定していない、あるいは意図的に定めない状態。青年期や人生の節目に多く見られ、「探索中」という状態です。これは「迷っている」という否定的な状態ではなく、アイデンティティ形成の自然なプロセスです。</p>
+            <p class="letter-detail"><strong>②クィア：</strong>もともと侮辱語として使われた言葉を当事者コミュニティが取り戻し、「LGBTという既存のカテゴリに収まらない多様な性のあり方全体」の総称として使うようになった言葉。「LGBTQ」のQとして置かれる場合、セクシュアルマイノリティ全体を包括する言葉として機能します。</p>
+          </div>
+
+          <p class="letter-detail" style="margin-top:16px;">就労移行支援の文脈で「Q」が特に重要なのは、<strong>利用者の中に「自分が何者かわからない」という状態の人が一定数いるから</strong>です。そのような人に対して「で、あなたはLとGとBのどれ？」と聞くことは、本人のアイデンティティを矮小化します。「分類しなくていい」「探索中でいい」というメッセージを、スタッフが言葉や態度で示せることが大切です。</p>
+
+          <div class="misconception-box">
+            <div class="mis-label">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#e8834a" stroke-width="1.5"/><path d="M7 4v4M7 10v.5" stroke="#e8834a" stroke-width="1.5" stroke-linecap="round"/></svg>
+              注意点
+            </div>
+            <p>「クィア」という言葉は、当事者が自分自身に使う文脈では受け入れられていますが、外部の人間が他者にラベルとして使うことは適切ではありません。また、まだ侮辱語として受け取る当事者もいます。使用には慎重さが必要です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- + -->
+    <div class="letter-section fade-in">
+      <div class="letter-card" id="card-plus">
+        <div class="letter-header" onclick="toggleCard('card-plus')">
+          <div class="letter-badge badge-plus">+</div>
+          <div class="letter-summary">
+            <div class="letter-name">＋（プラス）が示すもの</div>
+            <div class="letter-short">LGBTQ に収まらない多様なアイデンティティすべて</div>
+          </div>
+          <div class="letter-toggle">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 5l5 5 5-5" stroke="#1a2744" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="letter-body">
+          <span class="letter-axis-tag tag-open">軸：包括的な傘概念</span>
+          <p class="letter-detail">アセクシュアル（他者への性的惹かれを感じない・少ない）、アロマンティック（恋愛的惹かれを感じない）、パンセクシュアル、インターセックス（身体的性が二元的でない）、ノンバイナリー、Xジェンダーなど、LGBTQの4文字に収まりきらない多様なあり方を示すために「＋」が付けられています。</p>
+          <p class="letter-detail">「＋」は「他にもいる」という謙虚な姿勢の表れです。すべてを覚える必要はありませんが、「私が知っているカテゴリ以外の人もいる」という前提を持っておくことが重要です。</p>
+          <div class="misconception-box" style="background:#f3eefb; border-color:#c8b8e8;">
+            <div class="mis-label" style="color:var(--accent-purple);">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#7a5ab8" stroke-width="1.5"/><path d="M7 4v4M7 10v.5" stroke="#7a5ab8" stroke-width="1.5" stroke-linecap="round"/></svg>
+              なぜ「+」は無限なのか
+            </div>
+            <p>Section 02で示した4本の軸（身体的性・性自認・性的指向・性表現）はそれぞれ独立したスペクトラムです。連続する帯が4本、互いに独立して組み合わさるため、<strong>理論上のあり方は無数に存在します</strong>。</p>
+            <p style="margin-top:8px;">参考として、Facebookは2014年に英語圏で58種類のカスタム性別オプションを導入しましたが、これは「英語で既に名前がついているアイデンティティ」を列挙したに過ぎません。言語化されていないあり方、文化によって異なる概念まで含めれば、数は際限なく増えます。「58」は上限ではなく、ある時点での可視化の試みです。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 4: 言葉の配慮 -->
+<section>
+  <div class="container">
+    <div class="section-label"><span class="dot" style="background:var(--accent-yellow)"></span> Section 04</div>
+    <h2>言葉の地雷原：よくある言葉の問題</h2>
+
+    <p>「悪意がない」言葉でも、当事者にとって傷になる表現があります。「言わなかったから大丈夫」ではなく、「どう言えばよかったか」を知っておくことが大切です。</p>
+
+    <!-- パートナー表現テーブル -->
+    <h3 style="margin-top:32px; margin-bottom:16px;">「パートナー」「家族」に関する言葉</h3>
+    <p style="font-size:14px;">就労移行支援の面談では、プライベートな関係について触れる場面があります。以下の言い換えを意識するだけで、関わりやすい環境がつくれます。</p>
+
+    <table class="partner-table fade-in">
+      <thead>
+        <tr>
+          <th style="width:28%">場面</th>
+          <th style="width:36%">問題のある表現</th>
+          <th style="width:36%">配慮ある表現</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>交際相手について聞く</td>
+          <td><span class="word-chip chip-avoid">彼氏は？</span><span class="word-chip chip-avoid">彼女は？</span></td>
+          <td><span class="word-chip chip-ok">パートナーはいますか？</span><span class="word-chip chip-ok">大切な人は？</span></td>
+        </tr>
+        <tr>
+          <td>家族について聞く</td>
+          <td><span class="word-chip chip-avoid">ご両親は？</span><span class="word-chip chip-avoid">奥さん・旦那さんは？</span></td>
+          <td><span class="word-chip chip-ok">家族やパートナーの方は？</span><span class="word-chip chip-ok">一緒に住んでいる方は？</span></td>
+        </tr>
+        <tr>
+          <td>就職後の生活サポートを聞く</td>
+          <td><span class="word-chip chip-avoid">ご主人の収入は？</span></td>
+          <td><span class="word-chip chip-ok">家計を支えてくれる方はいますか？</span></td>
+        </tr>
+        <tr>
+          <td>服装・外見について</td>
+          <td><span class="word-chip chip-avoid">男/女らしく</span><span class="word-chip chip-avoid">その格好で面接は…</span></td>
+          <td><span class="word-chip chip-ok">企業の服装規定に合わせると〜</span><span class="word-chip chip-neutral">規定を一緒に確認しましょう</span></td>
+        </tr>
+        <tr>
+          <td>性別を聞く必要がある場面</td>
+          <td><span class="word-chip chip-avoid">男性？女性？（二択で迫る）</span></td>
+          <td><span class="word-chip chip-ok">（必要に応じて）性別はどのようにご自身で認識されていますか？</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="rainbow-divider" style="margin-top:32px;"></div>
+
+    <!-- 地雷ワード -->
+    <h3 style="margin-bottom:16px;">言ってしまいがちな「地雷」表現</h3>
+
+    <div class="minefield-grid fade-in">
+
+      <div class="minefield-item">
+        <div class="avoid">
+          <div class="avoid-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" stroke="#e05a5a" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <span class="word-avoid">「本当はどっちが好きなの？」</span>
+        </div>
+        <div class="arrow-between">↓</div>
+        <div class="avoid" style="align-items:flex-start;">
+          <div class="ok-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1.5 5l3 3 4-4.5" stroke="#4a9e7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="word-ok">聞かない・必要があれば「もう少し聞かせてもらえますか」</span>
+        </div>
+        <p class="word-reason">バイセクシュアルの人に対してよく向けられる。性的指向は「本当の好み」と「嘘の好み」があるわけではない。</p>
+      </div>
+
+      <div class="minefield-item">
+        <div class="avoid">
+          <div class="avoid-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" stroke="#e05a5a" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <span class="word-avoid">「見た目でわかった」「やっぱりそうか」</span>
+        </div>
+        <div class="arrow-between">↓</div>
+        <div class="avoid">
+          <div class="ok-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1.5 5l3 3 4-4.5" stroke="#4a9e7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="word-ok">「話してくれてありがとう」</span>
+        </div>
+        <p class="word-reason">外見でカテゴリを決めつけることへの不快感。開示された際はまず受け取ることが大切。</p>
+      </div>
+
+      <div class="minefield-item">
+        <div class="avoid">
+          <div class="avoid-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" stroke="#e05a5a" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <span class="word-avoid">「普通の人と同じように接します」</span>
+        </div>
+        <div class="arrow-between">↓</div>
+        <div class="avoid">
+          <div class="ok-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1.5 5l3 3 4-4.5" stroke="#4a9e7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="word-ok">「一緒に考えていきましょう」</span>
+        </div>
+        <p class="word-reason">「普通」の対義に当事者を置いてしまう。「あなたの状況に合わせて」という姿勢を言葉にする。</p>
+      </div>
+
+      <div class="minefield-item">
+        <div class="avoid">
+          <div class="avoid-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" stroke="#e05a5a" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <span class="word-avoid">「気持ちはわかります」</span>
+        </div>
+        <div class="arrow-between">↓</div>
+        <div class="avoid">
+          <div class="ok-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1.5 5l3 3 4-4.5" stroke="#4a9e7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="word-ok">「そうなんですね。もう少し聞かせてもらえますか」</span>
+        </div>
+        <p class="word-reason">経験していない苦労を「わかります」と言うことで、当事者は孤立感を感じることがある。共感よりも「聴く姿勢」を示す言葉が有効。</p>
+      </div>
+
+      <div class="minefield-item">
+        <div class="avoid">
+          <div class="avoid-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" stroke="#e05a5a" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <span class="word-avoid">「カミングアウトしてくれてよかった」「勇気があるね」</span>
+        </div>
+        <div class="arrow-between">↓</div>
+        <div class="avoid">
+          <div class="ok-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1.5 5l3 3 4-4.5" stroke="#4a9e7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="word-ok">「話してくれてありがとう。一緒に考えましょう」</span>
+        </div>
+        <p class="word-reason">「勇気がいること」として扱うことで、「普通ではない特別な告白」という印象を強める。淡々と受け取る姿勢が安心感につながる。</p>
+      </div>
+
+      <div class="minefield-item">
+        <div class="avoid">
+          <div class="avoid-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 2l6 6M8 2l-6 6" stroke="#e05a5a" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <span class="word-avoid">「最近の人はみんなそう言うよね」</span>
+        </div>
+        <div class="arrow-between">↓</div>
+        <div class="avoid">
+          <div class="ok-icon">
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1.5 5l3 3 4-4.5" stroke="#4a9e7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="word-ok">（言わない）</span>
+        </div>
+        <p class="word-reason">「流行り」「ブーム」として扱うことで本人のアイデンティティを軽視する。可視化が進んだことと、LGBTQの人が増えたことは別の話。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: 関わり方 -->
+<section>
+  <div class="container">
+    <div class="section-label"><span class="dot" style="background:var(--accent-green)"></span> Section 05</div>
+    <h2>支援現場での関わり方</h2>
+    <p>「正しい言葉を使う」だけが配慮ではありません。<strong class="highlight">どんな姿勢で聴くか・どう応じるか</strong>がより重要です。</p>
+    <div class="practice-section">
+
+      <div class="practice-scenario fade-in">
+        <span class="scenario-tag">SCENARIO 01 &nbsp;·&nbsp; 初回面談</span>
+        <h3>カミングアウトされた場合の初動対応</h3>
+        <p style="font-size:13px; color:var(--gray-mid);">利用者が面談中に「実は自分はトランスジェンダーで…」と話してくれた場合。</p>
+        <div class="dialogue">
+          <div class="ng-label">避けたい対応例</div>
+          <div class="dialogue-row">
+            <div class="speaker speaker-client">利用者</div>
+            <div class="dialogue-text">「実は、自分はトランスジェンダーで、戸籍は男性なんですが、女性として生活しています」</div>
+          </div>
+          <div class="dialogue-row">
+            <div class="speaker speaker-staff">スタッフ</div>
+            <div class="dialogue-text ng">「そうなんですね！実はうちにも以前そういう方がいて…（他の利用者の話を始める）」</div>
+          </div>
+        </div>
+        <div class="dialogue" style="margin-top:16px;">
+          <div class="ok-label">推奨される対応例</div>
+          <div class="dialogue-row">
+            <div class="speaker speaker-client">利用者</div>
+            <div class="dialogue-text">「実は、自分はトランスジェンダーで、戸籍は男性なんですが、女性として生活しています」</div>
+          </div>
+          <div class="dialogue-row">
+            <div class="speaker speaker-staff">スタッフ</div>
+            <div class="dialogue-text ok">「教えてくれてありがとうございます。呼び方や配慮してほしいことがあれば、遠慮なく言ってください。今日はどんなことを一緒に考えたいですか？」</div>
+          </div>
+        </div>
+        <div class="practice-note">
+          <strong>ポイント：</strong>受け取る → 本人の希望を確認する → 本来の面談の目的に戻る、という流れ。他の利用者の情報を例として出すことはアウティングのリスクがあり厳禁です。
+        </div>
+      </div>
+
+      <div class="practice-scenario fade-in">
+        <span class="scenario-tag">SCENARIO 02 &nbsp;·&nbsp; 自己理解ワーク</span>
+        <h3>「将来プラン」「理想の一週間」でのプライベートな話題</h3>
+        <div class="dialogue">
+          <div class="ok-label">配慮ある聴き方</div>
+          <div class="dialogue-row">
+            <div class="speaker speaker-staff">スタッフ</div>
+            <div class="dialogue-text ok">「このワーク、プライベートの時間や関係について書く欄もありますが、書きたくない部分は空欄でも全然大丈夫です。書いた範囲で一緒に見ていきましょう」</div>
+          </div>
+        </div>
+        <div class="practice-note">
+          <strong>ポイント：</strong>「書かなくていい」という許可を先に出すだけで、利用者が「話してもいいかも」と感じる余地が生まれます。
+        </div>
+      </div>
+
+      <div class="practice-scenario fade-in">
+        <span class="scenario-tag">SCENARIO 03 &nbsp;·&nbsp; 就職活動・企業への開示</span>
+        <h3>開示・非開示の判断を支援する</h3>
+        <div class="dialogue">
+          <div class="ng-label">避けたい関わり</div>
+          <div class="dialogue-row">
+            <div class="speaker speaker-staff">スタッフ</div>
+            <div class="dialogue-text ng">「今の時代、多様性を大事にしている会社も多いし、正直に言った方がいいですよ」</div>
+          </div>
+        </div>
+        <div class="dialogue" style="margin-top:16px;">
+          <div class="ok-label">推奨される関わり</div>
+          <div class="dialogue-row">
+            <div class="speaker speaker-staff">スタッフ</div>
+            <div class="dialogue-text ok">「開示するかしないかは、○○さんが決めることです。企業の状況を一緒に調べることや、開示した場合・しなかった場合にどんなことが起きうるかを整理することは一緒にできますよ」</div>
+          </div>
+        </div>
+        <div class="practice-note">
+          <strong>ポイント：</strong>開示・非開示のどちらが「正解」かをスタッフが判断してはいけません。判断は本人のものです。PRIDE指標取得企業かどうかを企業研究の一環として確認するサポートは有効です。
+        </div>
+      </div>
+
+      <div class="practice-scenario fade-in">
+        <span class="scenario-tag">SCENARIO 04 &nbsp;·&nbsp; 呼称・代名詞</span>
+        <h3>名前・呼称の配慮</h3>
+        <div class="dialogue">
+          <div class="ok-label">実践的な対応</div>
+          <div class="dialogue-row">
+            <div class="speaker speaker-staff">スタッフ</div>
+            <div class="dialogue-text ok">「呼んでほしい名前や、呼ばれたい言い方があれば教えてください。支援記録の中でも、できる範囲で対応します」</div>
+          </div>
+        </div>
+        <div class="practice-note">
+          <strong>ポイント：</strong>戸籍名と通称名が異なる場合、<strong>本人の同意を得た上で</strong>、必要最小限のスタッフにのみ伝える形が原則です。
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: アウティング -->
+<section style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-label"><span class="dot" style="background:var(--accent-red)"></span> Section 06</div>
+    <h2>アウティングと情報管理：絶対に守るべきこと</h2>
+    <p>アウティングとは、<strong>本人の同意なく、その人のセクシュアリティや性自認を第三者に暴露すること</strong>です。善意であっても深刻な被害をもたらします。</p>
+    <div class="outing-box fade-in">
+      <h3>アウティングが引き起こすこと</h3>
+      <p>2015年に一橋大学で起きたアウティングによる転落死事件は、この問題の深刻さを社会に示しました。利用者の情報管理は支援の根幹です。</p>
+      <div class="outing-rules">
+        <div class="outing-rule"><strong>ルール 01：本人の同意なく他者に伝えない</strong>他のスタッフ・利用者・家族・企業担当者、誰に対しても。「業務上必要」に見えても、本人の同意が先です。</div>
+        <div class="outing-rule"><strong>ルール 02：記録に書く場合は慎重に</strong>支援記録にセクシュアリティや性自認を記載する必要があるか、まず考える。書く場合は本人に確認し、閲覧範囲を限定する。</div>
+        <div class="outing-rule"><strong>ルール 03：「うっかり」は通じない</strong>「悪気はなかった」という状況でも、本人への影響は同じです。雑談の中での不用意な発言も含まれます。</div>
+        <div class="outing-rule"><strong>ルール 04：企業への情報提供は要注意</strong>就職支援の過程で企業側に伝える情報は、必ず本人と確認してから。「企業がフレンドリーだから大丈夫」という判断はスタッフがするものではありません。</div>
+        <div class="outing-rule"><strong>ルール 05：カミングアウトを求めない</strong>「話してくれれば対応しやすい」という言い方も、間接的な開示の圧力になりえます。</div>
+      </div>
+    </div>
+    <div class="note fade-in" style="margin-top:24px;">アウティングは不法行為として民事上の損害賠償が認められた判例があります（一橋大学アウティング事件等）。また、2023年施行のLGBT理解増進法においても、本人の意思に反した情報開示への問題意識が示されています。</div>
+  </div>
+</section>
+
+<!-- SECTION 7: 今日からできること -->
+<section>
+  <div class="container">
+    <div class="section-label"><span class="dot" style="background:var(--accent-purple)"></span> Section 07</div>
+    <h2>KBCスタッフとして、今日からできること</h2>
+    <p>大きな制度変更や特別なトレーニングがなくても、明日から変えられることがあります。</p>
+    <div class="action-grid fade-in">
+      <div class="action-card">
+        <div class="action-icon" style="background:#eef2fd;"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3C7.477 3 3 7.477 3 13s4.477 10 10 10 10-4.477 10-10S18.523 3 13 3z" stroke="#4a7ac8" stroke-width="1.6"/><path d="M13 9v4l3 3" stroke="#4a7ac8" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>「彼女は？」をやめる</h3>
+        <p>日常会話の「彼氏・彼女」を「パートナー」に変えるだけ。意識していなかった人への配慮が生まれます。</p>
+      </div>
+      <div class="action-card">
+        <div class="action-icon" style="background:#eef7f3;"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="4" y="5" width="18" height="16" rx="2" stroke="#4a9e7a" stroke-width="1.6"/><path d="M9 12h8M9 16h5" stroke="#4a9e7a" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>記録の書き方を見直す</h3>
+        <p>セクシュアリティに関する情報が記録に残る必要があるか確認し、書く場合は本人の同意を取る習慣をつける。</p>
+      </div>
+      <div class="action-card">
+        <div class="action-icon" style="background:#fef3f3;"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 4L5 9v12h6v-6h4v6h6V9L13 4z" stroke="#e05a5a" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3>「分類しなくていい」を伝える</h3>
+        <p>クエスチョニングの利用者に、「どこかに属さなくていい」というメッセージを言葉と態度で示す。</p>
+      </div>
+      <div class="action-card">
+        <div class="action-icon" style="background:#fdf6ee;"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="10" cy="9" r="4" stroke="#e8834a" stroke-width="1.6"/><path d="M4 21c0-3.314 2.686-6 6-6M18 14v6M15 17h6" stroke="#e8834a" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>企業情報を意識して収集する</h3>
+        <p>求人開拓・実習先選定の際に、PRIDE指標やダイバーシティ方針を確認する視点を加える。</p>
+      </div>
+      <div class="action-card">
+        <div class="action-icon" style="background:#f3eefb;"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M12 4H8a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V10l-6-6z" stroke="#7a5ab8" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 4v6h6" stroke="#7a5ab8" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3>わからなければ「聞く」</h3>
+        <p>「どう呼んでほしいですか？」と本人に確認することが、知識より先に大切なことがある。</p>
+      </div>
+      <div class="action-card">
+        <div class="action-icon" style="background:#eef7f3;"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M5 13s2-4 8-4 8 4 8 4-2 4-8 4-8-4-8-4z" stroke="#4a9e7a" stroke-width="1.6"/><circle cx="13" cy="13" r="2" stroke="#4a9e7a" stroke-width="1.6"/></svg></div>
+        <h3>学び続ける姿勢を持つ</h3>
+        <p>LGBTQ+の概念・用語は進化し続けています。「一度学んだから終わり」ではなく、アップデートする姿勢が大切です。</p>
+      </div>
+    </div>
+
+    <div class="rainbow-divider" style="margin-top:40px;"></div>
+
+    <div class="card fade-in" style="border-left:4px solid var(--accent-blue); background:var(--ink-faint);">
+      <h3 style="margin-bottom:10px;">最後に：「完璧な対応」は目標ではない</h3>
+      <p style="font-size:14px;">知識を持てば持つほど、「間違えたらどうしよう」という不安も生まれます。しかし当事者にとって大切なのは「完璧な対応をするスタッフ」ではなく、「傷つけても気づいて修正しようとするスタッフ」です。</p>
+      <p style="font-size:14px; margin-bottom:0;">言い間違えたら謝る。わからなければ聞く。それで十分です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: 参考資料 -->
+<section style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-label"><span class="dot" style="background:var(--gray-mid)"></span> Section 08</div>
+    <h2>参考資料・さらに学ぶために</h2>
+    <p>以下はいずれも信頼性の高い情報源です。</p>
+    <div class="sources-grid fade-in">
+      <a class="source-link" href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyoukintou/lgbtq/index.html" target="_blank" rel="noopener">
+        <div class="source-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="2" stroke="#1a2744" stroke-width="1.5"/><path d="M7 10h6M7 13h4" stroke="#1a2744" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="source-text"><div class="source-title">厚生労働省：職場におけるLGBTQへの対応</div><div class="source-desc">国の方針・職場における配慮のガイドライン</div></div>
+        <div class="source-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#8892aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a class="source-link" href="https://workwithpride.jp/pride-i/" target="_blank" rel="noopener">
+        <div class="source-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#1a2744" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="#1a2744" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="source-text"><div class="source-title">PRIDE指標（work with Pride）</div><div class="source-desc">LGBTQ+に関する職場環境整備の評価指標。企業調査時の参考に</div></div>
+        <div class="source-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#8892aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a class="source-link" href="https://icd.who.int/" target="_blank" rel="noopener">
+        <div class="source-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3C6.134 3 3 6.134 3 10s3.134 7 7 7 7-3.134 7-7-3.134-7-7-7z" stroke="#1a2744" stroke-width="1.5"/><path d="M3 10h14M10 3c-2 2-3 4.5-3 7s1 5 3 7M10 3c2 2 3 4.5 3 7s-1 5-3 7" stroke="#1a2744" stroke-width="1.5"/></svg></div>
+        <div class="source-text"><div class="source-title">WHO ICD-11（国際疾病分類第11版）</div><div class="source-desc">「性別不合」が精神疾患の章から削除されたことの出典</div></div>
+        <div class="source-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#8892aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a class="source-link" href="https://www.group.dentsu.com/jp/news/release/001046.html" target="_blank" rel="noopener">
+        <div class="source-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4h12v12H4z" stroke="#1a2744" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 8h4M8 12h2" stroke="#1a2744" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="source-text"><div class="source-title">電通LGBTQ+調査2023（dentsu Japan）</div><div class="source-desc">国内LGBTQ+層9.7%を報告。2012年からの第5回調査</div></div>
+        <div class="source-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#8892aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a class="source-link" href="https://www.apa.org/topics/lgbtq" target="_blank" rel="noopener">
+        <div class="source-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3C6.134 3 3 6.134 3 10s3.134 7 7 7 7-3.134 7-7-3.134-7-7-7z" stroke="#1a2744" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="#1a2744" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="source-text"><div class="source-title">APA（アメリカ心理学会）：LGBTQ+ Resources</div><div class="source-desc">性的指向・性自認に関する心理学的見解の国際的権威</div></div>
+        <div class="source-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#8892aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a class="source-link" href="https://www.nichibenren.or.jp/activity/human/lgbt.html" target="_blank" rel="noopener">
+        <div class="source-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 3h10l2 4H3L5 3zM3 7h14v10H3V7z" stroke="#1a2744" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+        <div class="source-text"><div class="source-title">日本弁護士連合会：LGBTに関する取り組み</div><div class="source-desc">アウティング・法的問題に関する参考資料</div></div>
+        <div class="source-arrow"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#8892aa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p style="margin-bottom:8px; color:var(--white); font-weight:700;">岡村雄一郎</p>
+    <p style="font-size:11px; margin-bottom:0; color:var(--gray-mid);">本資料の内容は、WHO・APA・厚生労働省・電通グループ・国立社会保障・人口問題研究所等の公開情報に基づいています。当事者の体験・アイデンティティは個人により異なります。</p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const p = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    document.getElementById('progress-bar').style.width = p + '%';
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  function toggleCard(id) { document.getElementById(id).classList.toggle('open'); }
+
+  const identityLabels = ['女性', '女性よりの中間', '中間（ノンバイナリー等）', '男性よりの中間', '男性'];
+  const orientationLabels = ['同性のみ', '主に同性', 'どちらも', '主に異性', '異性のみ'];
+  const expressionLabels = ['フェミニン', 'やや女性的', '中性的', 'やや男性的', 'マスキュリン'];
+
+  function updateSlider() {
+    const iv = parseInt(document.getElementById('slider-identity').value);
+    const ov = parseInt(document.getElementById('slider-orientation').value);
+    const ev = parseInt(document.getElementById('slider-expression').value);
+    document.getElementById('label-identity').textContent = identityLabels[iv];
+    document.getElementById('label-orientation').textContent = orientationLabels[ov];
+    document.getElementById('label-expression').textContent = expressionLabels[ev];
+
+    let msg = `性自認「${identityLabels[iv]}」× 性的指向「${orientationLabels[ov]}」× 性表現「${expressionLabels[ev]}」の組み合わせです。`;
+    if (iv === 4 && ov === 4) msg += ' シスジェンダー・異性愛男性の最も一般的なイメージに近い組み合わせですが、これはあくまで「一つの組み合わせ」です。';
+    else if (iv === 0 && ov === 0) msg += ' 性自認が女性で同性に惹かれる場合、レズビアンと自認する方に近い組み合わせです。ラベルは本人が決めるものです。';
+    else if (iv === 4 && ov === 0) msg += ' 性自認が男性で同性に惹かれる場合、ゲイと自認する方に近い組み合わせです。';
+    else if (iv === 2) msg += ' 性自認が「どちらでもない」に近い場合、ノンバイナリーやXジェンダーと自認する方もいます。';
+    else if (ov === 2) msg += ' 「どちらの性別にも惹かれる」場合、バイセクシュアルやパンセクシュアルと自認する方もいます。';
+    else msg += ' どの組み合わせも実在し、それぞれが一つのあり方として尊重されます。';
+    document.getElementById('slider-message').textContent = msg;
+  }
+
+  document.getElementById('slider-identity').addEventListener('input', updateSlider);
+  document.getElementById('slider-orientation').addEventListener('input', updateSlider);
+  document.getElementById('slider-expression').addEventListener('input', updateSlider);
+</script>
+</body>
+</html>
